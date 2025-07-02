@@ -1,0 +1,7 @@
+opencv-python
+numpy
+torch
+moviepy
+matplotlib
+PyYAML
+pillow

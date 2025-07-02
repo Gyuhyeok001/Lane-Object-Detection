@@ -61,7 +61,9 @@ python3 fusion.py
 ---
 
 ## Project Result
-Check the saved output video and see lane lines and detected objects drawn simultaneously:
+
+[![Fusion Output Video](./fusion_output_thumbnail.png)](./fusion_output.mp4)
+
 
 ---
 

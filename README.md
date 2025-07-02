@@ -46,9 +46,9 @@ lane_ws/
 
 1. **Build the ROS 2 workspace:**
 
-cd ~/lane_ws
-colcon build
-source install/setup.bash
+  cd ~/lane_ws
+  colcon build
+  source install/setup.bash
 
 2. Run the lane follower node:
 

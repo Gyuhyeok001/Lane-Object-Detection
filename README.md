@@ -62,7 +62,7 @@ python3 fusion.py
 
 ## Project Result
 
-[![Fusion Output Video](./fusion_output_thumbnail.png)](./fusion_output.mp4)
+[![Fusion Output Video](./output/fusion_output_thumbnail.png)](./output/fusion_output.mp4)
 
 
 ---

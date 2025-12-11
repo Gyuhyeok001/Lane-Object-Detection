@@ -18,8 +18,6 @@ It demonstrates frame-by-frame processing of video input to detect lane lines an
 ## Project Structure
 
 Example project layout:
-
-```text
 Lane-Object-Detection/
 ├── fusion.py                     # Main script: lane + object fusion + Twist commands
 ├── lane_tracking/
@@ -38,7 +36,7 @@ Lane-Object-Detection/
 
 ---
 
-## Features
+##Features
 - Processes a test video (or camera feed, with minor changes) using OpenCV
 - Detects lane lines using grayscale conversion, Gaussian blur, Canny edge detection, and Hough Transform
 - Detects and labels objects (person, car, etc.) using YOLOv5

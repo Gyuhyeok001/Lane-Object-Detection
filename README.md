@@ -60,7 +60,7 @@ pip install -r requirements.txt
 python3 fusion.py
 
 *If you want to inspect the velocity commands in another terminal*
-source /opt/ros/humble/setup.bash
+ (source /opt/ros/humble/setup.bash)
 ros2 topic echo /cmd_vel
 
 ---

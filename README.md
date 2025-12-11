@@ -17,7 +17,7 @@ It demonstrates frame-by-frame processing of video input to detect lane lines an
 
 ## Project Structure
 
-Example project layout:
+```text
 Lane-Object-Detection/
 ├── fusion.py                     # Main script: lane + object fusion + Twist commands
 ├── lane_tracking/

@@ -1,6 +1,7 @@
 # Lane-Object-Detection
 
-This project integrates lane following and object detection using ROS 2 & OpenCV. It demonstrates real-time processing of video or camera input to detect lane lines and objects simultaneously.
+This project integrates lane following and object detection using ROS 2, OpenCV, and YOLOv5.  
+It demonstrates frame-by-frame processing of video input to detect lane lines and objects simultaneously, and generates ROS 2 `Twist` commands for robot control.
 
 ---
 
@@ -9,54 +10,60 @@ This project integrates lane following and object detection using ROS 2 & OpenCV
 - ROS 2 (Humble)
 - Python 3
 - OpenCV
-- YOLOv5 (for object detection)
+- PyTorch
+- YOLOv5 (object detection)
 
 ---
 
 ## Project Structure
 
-lane_ws/
-├── src/
-│ └── lane_follower/
-│ ├── package.xml
-│ ├── setup.py
-│ ├── resource/
-│ ├── lane_follower/
-│ │ ├── init.py
-│ │ └── lane_follower_node.py
-│ ├── test/
-│ └── lanevideo.mp4
+Example project layout:
+
+```text
+Lane-Object-Detection/
+├── fusion.py                     # Main script: lane + object fusion + Twist commands
+├── lane_tracking/
+│   └── lane.py                   # Classical lane detection (Canny + Hough)
+├── yolov5/                       # YOLOv5 code (as a submodule or copied repo)
+├── input/
+│   └── input.video.mp4           # Test input video
+├── output/
+│   ├── fusion_output.mp4         # Output video (lane + object overlays)
+│   └── fusion_output_thumbnail.png
+├── requirements.txt
+└── README.md
+
 
 *Note: Adapt the above structure according to your actual project layout.*
 
 ---
 
 ## Features
-
-- Supports real-time processing of test video or camera feed using OpenCV
-- Detects lane lines with grayscale, Gaussian blur, Canny edge detection, and Hough Transform
+- Processes a test video (or camera feed, with minor changes) using OpenCV
+- Detects lane lines using grayscale conversion, Gaussian blur, Canny edge detection, and Hough Transform
 - Detects and labels objects (person, car, etc.) using YOLOv5
-- Draws lane lines and object bounding boxes on the output video
-- Publishes ROS Twist commands for robot control based on lane detection (for ROS integration)
-- Saves output video with combined lane and object detection results
+- Overlays lane lines and object bounding boxes on the output video
+- Generates ROS 2 geometry_msgs/Twist commands for robot control based on lane geometry
+- Saves the fused lane + object detection result as an output vide
 
 ---
 
 ## How to Run
 
-1. **Build the ROS 2 workspace:**
+# 1) Source your ROS 2 environment (example: Humble)
+source /opt/ros/humble/setup.bash
 
-  cd ~/lane_ws
-  colcon build
-  source install/setup.bash
+# 2) Clone the repository and install Python dependencies
+git clone <this-repo-url>
+cd Lane-Object-Detection
+pip install -r requirements.txt
 
-2. Run the lane follower node:
-
-ros2 run lane_follower lane_follower_node
-
-3. Run the fusion Python script (lane + object detection):
-
+# 3) Run the fusion script (lane + object detection + ROS 2 Twist commands)
 python3 fusion.py
+
+# *) If you want to inspect the velocity commands in another terminal
+source /opt/ros/humble/setup.bash
+ros2 topic echo /cmd_vel
 
 ---
 

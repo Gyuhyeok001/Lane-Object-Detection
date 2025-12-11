@@ -15,17 +15,6 @@ It demonstrates frame-by-frame processing of video input to detect lane lines an
 
 ---
 
-## Features
-
-- Runs YOLOv5 object detection on images and videos using a simple Python script
-- Supports multiple input sources: single image, image folder, video file, or webcam (`--source 0`)
-- Uses pretrained YOLOv5s weights (`yolov5s.pt`) for fast person/vehicle/general object detection
-- Automatically saves annotated outputs (images/videos with bounding boxes and labels) under `runs/detect/`
-- Includes an example detection result exported as a GIF (`results/people.gif`) for easy sharing
-- Based on the official YOLOv5 repository, making it easy to extend to custom datasets or fine-tuned models
-
----
-
 ## Project Structure
 
 ```test

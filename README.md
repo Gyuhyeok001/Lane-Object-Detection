@@ -36,7 +36,7 @@ Lane-Object-Detection/
 
 ---
 
-##Features
+## Features
 - Processes a test video (or camera feed, with minor changes) using OpenCV
 - Detects lane lines using grayscale conversion, Gaussian blur, Canny edge detection, and Hough Transform
 - Detects and labels objects (person, car, etc.) using YOLOv5
@@ -48,18 +48,18 @@ Lane-Object-Detection/
 
 ## How to Run
 
-# 1) Source your ROS 2 environment (example: Humble)
+1) Source your ROS 2 environment (example: Humble)
 source /opt/ros/humble/setup.bash
 
-# 2) Clone the repository and install Python dependencies
+2) Clone the repository and install Python dependencies
 git clone <this-repo-url>
 cd Lane-Object-Detection
 pip install -r requirements.txt
 
-# 3) Run the fusion script (lane + object detection + ROS 2 Twist commands)
+3) Run the fusion script (lane + object detection + ROS 2 Twist commands)
 python3 fusion.py
 
-# *) If you want to inspect the velocity commands in another terminal
+*) If you want to inspect the velocity commands in another terminal
 source /opt/ros/humble/setup.bash
 ros2 topic echo /cmd_vel
 
